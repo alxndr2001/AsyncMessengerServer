@@ -12,7 +12,8 @@ if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
     add_executable(ServerMessengerProj
         main.cpp
-        Server.cpp)
+        server.cpp
+        session.cpp)
     target_link_libraries(ServerMessengerProj ${Boost_LIBRARIES})
 endif()
 

@@ -5,24 +5,28 @@
 #include <unordered_map>
 #include <string>
 #include <boost/asio.hpp>
+#include "server.h"
 
 using namespace std;
 using boost::asio::ip::tcp;
 
-class Session;
-typedef std::unordered_map<std::string, std::shared_ptr<Session>> sessionsMap;
+class AsyncServer;
 
 class Session : public std::enable_shared_from_this<Session> {
-    Session(tcp::socket socket, sessionsMap& sessions)
-            : socket_(std::move(socket)), sessions_(sessions) {}
-    void start(); // Запуск сессии
+public:
+    Session(tcp::socket socket, AsyncServer& server)
+            : socket_(std::move(socket)), server_(server) {}
+    void start(); // Start session
+    void deliver(const string &msg); //Sending to another client
+    tcp::socket& socket(); // Метод для доступа к сокету
 
 private:
-    void do_read(); // Чтение данных с клиента
+    void do_read();
+    void do_write(const string &msg);
 
-    tcp::socket socket_; // Сокет соединения с клиентом
-    std::string id; // Идентификатор сессии
-    sessionsMap sessions_;
+    tcp::socket socket_; // Client sock connection
+    std::string readMessage_;
+    AsyncServer& server_;
 };
 
 #endif // SESSION_H
