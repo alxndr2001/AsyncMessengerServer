@@ -1,0 +1,3 @@
+C:/Users/zubov/Documents/ServerMessengerProj/build/CMakeFiles/ServerMessengerProj.dir
+C:/Users/zubov/Documents/ServerMessengerProj/build/CMakeFiles/edit_cache.dir
+C:/Users/zubov/Documents/ServerMessengerProj/build/CMakeFiles/rebuild_cache.dir
