@@ -1,8 +1,0 @@
-[
-{
-  "directory": "C:/Users/zubov/Documents/ServerMessengerProj/build",
-  "command": "C:\\Qt\\Qt5.14.2\\Tools\\mingw730_64\\bin\\c++.exe -IC:/devel/boost_1_85_0 -g -o CMakeFiles\\ServerMessengerProj.dir\\server.cpp.obj -c C:\\Users\\zubov\\Documents\\ServerMessengerProj\\server.cpp",
-  "file": "C:\\Users\\zubov\\Documents\\ServerMessengerProj\\server.cpp",
-  "output": "CMakeFiles\\ServerMessengerProj.dir\\server.cpp.obj"
-}
-]
